@@ -19,6 +19,8 @@
 #
 # Everything in this directory will become public
 
+GAPPS_VARIANT := mini
+
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/lge/bullhead-kernel/Image.gz-dtb
@@ -427,3 +429,5 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+$(call inherit-product, vendor/ariel/ariel-packages.mk)

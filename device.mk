@@ -21,6 +21,8 @@
 
 GAPPS_VARIANT := mini
 
+GAPPS_FORCE_PIXEL_LAUNCHER := true
+
 # Enable support for chinook sensorhub
 TARGET_USES_CHINOOK_SENSORHUB := false
 

@@ -21,6 +21,10 @@ import init.bullhead.sensorhub.rc
 import init.bullhead.ramdump.rc
 import init.bullhead.misc.rc
 
+# this should probably be moved to system/core and added to default init.rc
+# check cyanogen system/core implementation
+import init.ariel.rc
+
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chown system system /sys/kernel/debug/kgsl/proc

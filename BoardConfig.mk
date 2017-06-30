@@ -161,6 +161,8 @@ TARGET_PER_MGR_ENABLED := true
 
 USE_CLANG_PLATFORM_BUILD := true
 
-USE_CLANG_PLATFORM_BUILD := true
+BOARD_USES_ARIEL_HARDWARE := true
+BOARD_HARDWARE_CLASS += \
+    hardware/ariel/arielhw
 
 -include vendor/lge/bullhead/BoardConfigVendor.mk

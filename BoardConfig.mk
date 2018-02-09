@@ -26,8 +26,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 
-ENABLE_CPUSETS := true
-
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE        := 0x00000000
@@ -126,21 +124,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_RECOVERY_FSTAB = device/lge/bullhead/fstab.bullhead
 
-#TWRP START
-TW_THEME := portrait_hdpi
-PRODUCT_COPY_FILES += \
-    device/lge/bullhead/twrp.fstab:recovery/root/etc/twrp.fstab
-TW_NO_REBOOT_RECOVERY := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_SUPPRESS_SECURE_ERASE := true
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_INCLUDE_CRYPTO := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-#TW_OEM_BUILD := true
-#TWRP END
-
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/bullhead
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -181,6 +164,9 @@ TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/bullhead-setup.sh
+
+DEVICE_MANIFEST_FILE := device/lge/bullhead/manifest.xml
+DEVICE_MATRIX_FILE := device/lge/bullhead/compatibility_matrix.xml
 
 ifeq ($(TARGET_PRODUCT),aosp_bullhead_svelte)
 BOARD_KERNEL_CMDLINE += mem=1024M maxcpus=2
